@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>modelo</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="SQL Server 2008" />
+   <property key="Logical" value="New Connection" />
+   <property key="JDBC URL" value="jdbc:sqlserver://localhost:1433;DatabaseName=HISTORICO_PRECO_PASSAGEM" />
+   <property key="UID" value="sa" />
+   <property key="PWD" value="123456" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="ce398ff8-2773-43b1-8923-688a8c1eba35" dbcs-ref="DS2" name="New Connection" physicalName="New Connection" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Couldn&apos;t connect to database: JDBC Driver &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot; not found." >
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB2" populated="true" UUID="54a28a08-9ace-4a30-b6f5-f6fde9981081" name="Dimensão Aeroporto" objectType="TABLE" physicalName="DIM_AEROPORTO" >
+   <remarks></remarks>
+   <folder id="FOLTAB21" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL3" populated="true" UUID="b6d08f9c-c041-4093-bf04-c4f993edd19c" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_CD_OACI_seq" defaultValue="" name="DIMENSÃO CÓDIGO OAC_" nullable="0" physicalName="DIM_CD_OACI" precision="4" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="ab0aac91-71f6-4e61-9ca0-c1b8c6bc7281" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_NOME_seq" defaultValue="" name="DIMENSÃO NOME" nullable="1" physicalName="DIM_NOME" precision="300" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="d0444cb5-1ebe-45b4-9603-f31224a8e724" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_MUNICIPIO_seq" defaultValue="" name="DIMENSÃO MUNICIPIO" nullable="1" physicalName="DIM_MUNICIPIO" precision="300" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="e3fa44c0-5e83-423c-8f3e-6372418580c9" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_LATITUDE_seq" defaultValue="" name="DIMENSÃO LATITUDE" nullable="0" physicalName="DIM_LATITUDE" precision="13" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="60dc47dc-6641-4c06-aa19-9f3e6507698b" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_LONGITUDE_seq" defaultValue="" name="DIMENSÃO LONGITUDE" nullable="0" physicalName="DIM_LONGITUDE" precision="13" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB23" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB22" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB24" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX8" populated="true" UUID="81d41fc3-0d1c-4e3e-ba17-9bcffdce6ca3" clustered="false" name="DIM_AEROPORTO_PK" physicalName="DIM_AEROPORTO_PK" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC9" populated="true" UUID="b8d16e1e-c93e-4233-ba3b-e5dd8c953c74" ascendingOrDescending="UNSPECIFIED" column-ref="COL3" name="DIMENSÃO CÓDIGO OAC_" physicalName="DIM_CD_OACI" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB10" populated="true" UUID="605fcb85-9479-41bf-9ae1-4cfaff9eeaee" name="Dimensão Empresas" objectType="TABLE" physicalName="DIM_EMPRESAS" >
+   <remarks></remarks>
+   <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL11" populated="true" UUID="dd501495-c1fd-4b7e-994a-66214f739ec9" autoIncrement="false" autoIncrementSequenceName="DIM_EMPRESAS_DIM_SIGLA_OACI_seq" defaultValue="" name="DIMENSÃO SIGLA OACI" nullable="0" physicalName="DIM_SIGLA_OACI" precision="4" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="ed83ad03-d2e1-4607-8c16-cd74ca48bd52" autoIncrement="false" autoIncrementSequenceName="DIM_EMPRESAS_DIM_NM_EMPRESAS_seq" defaultValue="" name="DIMENSÃO NOME EMPRESAS" nullable="0" physicalName="DIM_NM_EMPRESAS" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX13" populated="true" UUID="c0179b5f-6e0c-446a-adc7-6b2718fb7d73" clustered="false" name="DIM_EMPRESAS_PK" physicalName="DIM_EMPRESAS_PK" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC14" populated="true" UUID="38abd211-51f5-46b4-84c6-2a59203ed61b" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="DIMENSÃO SIGLA OACI" physicalName="DIM_SIGLA_OACI" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB15" populated="true" UUID="31f9c1fc-a52a-469d-8458-3a911edcda30" name="DIMENSÃO CALENDÁRIO" objectType="TABLE" physicalName="DIM_CALENDARIO" >
+   <remarks></remarks>
+   <folder id="FOLTAB151" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL16" populated="true" UUID="a1e59a7d-2f8c-474a-ba0e-3f37137616c3" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_ANO_MES_seq" defaultValue="" name="DIMENSÃO ANO MES" nullable="0" physicalName="DIM_ANO_MES" precision="7" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL17" populated="true" UUID="73dce005-2f72-418f-a176-30b96e243e06" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_ANO_seq" defaultValue="" name="DIMENSÃO ANO" nullable="0" physicalName="DIM_ANO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL18" populated="true" UUID="2ab0b27f-cc1b-4a18-bddd-87b5d31f52b0" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_INICE_MES_seq" defaultValue="" name="DIMENSÃO INDICE MÊS" nullable="0" physicalName="DIM_INICE_MES" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="2008739c-b15a-4338-83b9-b4c885969eca" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_NM_MES_seq" defaultValue="" name="DIMENSÃO NOME MÊS" nullable="0" physicalName="DIM_NM_MES" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="89281593-b31a-4934-a40a-3380b0f7d7cf" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_IND_TRIMESTRE_seq" defaultValue="" name="DIMENSÃO INDICE TRIMESTRE" nullable="0" physicalName="DIM_IND_TRIMESTRE" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="3e667ab6-4561-4a45-8ee9-e4720f7d1044" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_NOME_TRIMESTRE_seq" defaultValue="" name="DIMENSÃO NOME TRIMESTRE" nullable="0" physicalName="DIM_NOME_TRIMESTRE" precision="120" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB153" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB152" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB154" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX22" populated="true" UUID="b2b79639-7bae-45dd-b9b2-7a7603355ef0" clustered="false" name="DIM_CALENDARIO_pk" physicalName="DIM_CALENDARIO_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC23" populated="true" UUID="c184140f-3909-4ca8-99ed-e60db405a5ed" ascendingOrDescending="UNSPECIFIED" column-ref="COL16" name="DIMENSÃO ANO MES" physicalName="DIM_ANO_MES" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB24" populated="true" UUID="12851f42-7303-43ea-9f2f-768074a62018" name="FATO VENDA PASSAGEM" objectType="TABLE" physicalName="FT_VENDA_PASSAGEM" >
+   <remarks></remarks>
+   <folder id="FOLTAB241" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL25" populated="true" UUID="addbaced-2bb7-4901-a46f-bdff6567157b" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_CD_OACI_ORIGEM_seq" defaultValue="" name="DIMENSÃO CÓDIGO OACI ORIGEM" nullable="0" physicalName="DIM_CD_OACI_ORIGEM" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL26" populated="true" UUID="f6b62235-a34c-48cb-aa43-7a7b7d49e914" autoIncrement="false" autoIncrementSequenceName="DIM_EMPRESAS_DIM_SIGLA_OACI_seq" defaultValue="" name="DIMENSÃO SIGLA OACI" nullable="0" physicalName="DIM_SIGLA_OACI" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL27" populated="true" UUID="7546f8b0-2f71-4fa1-83c5-65dc7d56285d" autoIncrement="false" autoIncrementSequenceName="DIM_CALENDARIO_DIM_ANO_MES_seq" defaultValue="" name="DIMENSÃO ANO MES" nullable="0" physicalName="DIM_ANO_MES" precision="7" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL28" populated="true" UUID="5dfabf80-7e85-4c29-843a-976c91d1d08d" autoIncrement="false" autoIncrementSequenceName="DIM_AEROPORTO_DIM_CD_OACI_DESTINO_seq" defaultValue="" name="Dimensão Aeroporto_DIMENSÃO CÓDIGO OAC_" nullable="0" physicalName="DIM_CD_OACI_DESTINO" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL29" populated="true" UUID="da543f0e-a3e0-46d8-bfd9-5295ebac320c" autoIncrement="false" autoIncrementSequenceName="FT_VENDA_PASSAGEM_DIM_TARIFA_seq" defaultValue="" name="DIMENSÂO TARIFA" nullable="0" physicalName="DIM_TARIFA" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL30" populated="true" UUID="a66b31ac-324d-45eb-804b-8ecb3d8ac7ba" autoIncrement="false" autoIncrementSequenceName="FT_VENDA_PASSAGEM_DIM_ASSENTOS_seq" defaultValue="" name="DIIMENSÃO ASSENTOS" nullable="0" physicalName="DIM_ASSENTOS" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB243" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB242" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB244" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX31" populated="true" UUID="b483d7f4-5a62-4fc7-a8af-dad9a5f020a8" clustered="false" name="FT_VENDA_PASSAGEM_PK" physicalName="FT_VENDA_PASSAGEM_PK" primaryKeyIndex="true" unique="false" >
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL32" populated="true" UUID="498bf5ed-6cde-47ae-96a7-06d71015d74d" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_AEROPORTO_FT_VENDA_PASSAGEM_fk" physicalName="DIM_AEROPORTO_FT_VENDA_PASSAGEM_fk" pk-table-ref="TAB2" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP33" populated="true" UUID="d4513696-0e8e-407e-9531-aa23df6f3c2c" fk-column-ref="COL25" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL3" />
+   </relationship>
+   <relationship id="REL34" populated="true" UUID="175ce2ff-5af2-427d-81d9-638eb4b7c7db" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_AEROPORTO_FT_VENDA_PASSAGEM_fk1" physicalName="DIM_AEROPORTO_FT_VENDA_PASSAGEM_fk1" pk-table-ref="TAB2" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP35" populated="true" UUID="5dafa33e-f8e4-4b65-a8b2-9abf839339ee" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL3" />
+   </relationship>
+   <relationship id="REL36" populated="true" UUID="e7bdc930-37c7-470f-b85b-293befbc92f3" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_EMPRESAS_FT_VENDA_PASSAGEM_fk" physicalName="DIM_EMPRESAS_FT_VENDA_PASSAGEM_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP37" populated="true" UUID="581deebe-c31a-42f7-9786-ec36808266c6" fk-column-ref="COL26" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+   </relationship>
+   <relationship id="REL38" populated="true" UUID="74066841-e728-4dd3-b217-a574b2add32a" deferrability="7" deleteRule="3" fk-table-ref="TAB24" fkCardinality="7" identifying="false" name="DIM_CALENDARIO_FT_VENDA_PASSAGEM_fk" physicalName="DIM_CALENDARIO_FT_VENDA_PASSAGEM_fk" pk-table-ref="TAB15" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP39" populated="true" UUID="65d1464d-b347-4b0c-8a69-991c1c3ba956" fk-column-ref="COL27" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL16" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.SQLServer2005DDLGenerator" allow-connection="false"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="false" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB2" x="684" y="63" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB10" x="1270" y="346" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB15" x="158" y="337" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB24" x="705" y="372" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL38" pkConnection="0.5354330708661418" fkConnection="0.4126984126984127" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL36" pkConnection="0.8095238095238095" fkConnection="0.5316455696202531" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL32" pkConnection="0.36231884057971014" fkConnection="0.3333333333333333" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL34" pkConnection="0.8043478260869565" fkConnection="0.4750830564784053" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
